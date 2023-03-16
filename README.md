@@ -23,9 +23,8 @@ use Symfony\Component\Notifier\Recipient\Recipient;
 use TYPO3\CMS\Core\Log\LogLevel;
 
 $GLOBALS['TYPO3_CONF_VARS']['LOG']['Documentation']['Examples']['Controller']['processorConfiguration'] = [
-    // configuration for ERROR level log entries
+    // configuration for Debug level log entries and above
     \TYPO3\CMS\Core\Log\LogLevel::DEBUG => [
-        // add a MemoryUsageProcessor
         \Ssch\Psr3LogProcessor\Processor\PsrLogMessageProcessor::class => [
             // The format of the timestamp: one supported by DateTime::format
             'dateFormat' => DateTime::ISO8601,
