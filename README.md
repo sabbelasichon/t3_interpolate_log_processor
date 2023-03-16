@@ -18,9 +18,6 @@ In that case the {placeholder} of the message will be substituted by "bar" when 
 In order to activate the Processor you can configure it i.e. via ext_localconf.php
 
 ```php
-use Ssch\T3Notifier\Logger\Writer\NotifierWriter;
-use Symfony\Component\Notifier\Recipient\Recipient;
-use TYPO3\CMS\Core\Log\LogLevel;
 
 $GLOBALS['TYPO3_CONF_VARS']['LOG']['Documentation']['Examples']['Controller']['processorConfiguration'] = [
     // configuration for Debug level log entries and above
