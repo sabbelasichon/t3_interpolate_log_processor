@@ -1,0 +1,6 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Variable property access on \\$this\\(Ssch\\\\Psr3LogProcessor\\\\Processor\\\\PsrLogMessageProcessor\\)\\.$#"
+			count: 1
+			path: Classes/Processor/PsrLogMessageProcessor.php

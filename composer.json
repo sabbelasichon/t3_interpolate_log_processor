@@ -1,0 +1,90 @@
+{
+  "name": "ssch/t3-psr3-log-processor",
+  "type": "typo3-cms-extension",
+  "description": "Provide PSR-3 interpolate log processor",
+  "license": "GPL-2.0+",
+  "homepage": "http://www.schreibersebastian.de",
+  "keywords": [
+    "PSR-3",
+    "Logging",
+    "TYPO3"
+  ],
+  "authors": [
+    {
+      "name": "Sebastian Schreiber",
+      "email": "breakpoint@schreibersebastian.de",
+      "role": "Developer",
+      "homepage": "http://www.schreibersebastian.de"
+    }
+  ],
+  "require": {
+    "php": "^7.4 || ^8.0",
+    "typo3/cms-core": "^10.4 || ^11.5 || ^12.1"
+  },
+  "require-dev": {
+    "symplify/easy-coding-standard": "^11.1",
+    "php-parallel-lint/php-parallel-lint": "^1.3",
+    "phpstan/phpstan": "^1.8",
+    "phpstan/phpstan-phpunit": "^1.2",
+    "phpstan/phpstan-strict-rules": "^1.4",
+    "saschaegerer/phpstan-typo3": "^1.8",
+    "phpstan/extension-installer": "^1.2",
+    "typo3/testing-framework": "^6.16"
+  },
+  "replace": {
+    "typo3-ter/t3-psr3-log-processor": "self.version"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ssch\\Psr3LogProcessor\\": "Classes"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ssch\\Psr3LogProcessor\\Tests\\": "Tests"
+    }
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin",
+    "preferred-install": {
+      "typo3/cms": "source",
+      "typo3/cms-core": "source",
+      "*": "dist"
+    },
+    "allow-plugins": {
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true,
+      "phpstan/extension-installer": true
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "mkdir -p .Build/Web/typo3conf/ext/",
+      "[ -L .Build/Web/typo3conf/ext/t3_psr3_log_processor ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/t3_psr3_log_processor"
+    ],
+    "analyze": "phpstan analyse --ansi --memory-limit=-1",
+    "test-php-lint": [
+      ".Build/bin/parallel-lint ./Classes/",
+      ".Build/bin/parallel-lint ./Configuration/TCA/",
+      ".Build/bin/parallel-lint ./Tests/"
+    ],
+    "lint-php": "parallel-lint Tests Classes Configuration",
+    "check-style": "ecs check --ansi",
+    "fix-style": [
+      "ecs check --fix --ansi"
+    ],
+    "test-unit": [
+      ".Build/bin/phpunit --configuration Tests/Build/UnitTests.xml"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    },
+    "typo3/cms": {
+      "extension-key": "t3_psr3_log_processor",
+      "web-dir": ".Build/Web"
+    }
+  }
+}
