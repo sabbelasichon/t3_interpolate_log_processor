@@ -3,7 +3,7 @@
 
 ## Integration guide
 The extension ships with a custom Processor to substitute log messages with context variables in the message.
-Let´s say you have a log message with the following format
+Let´s say you have a log message with the following format:
 
 ```php
 
@@ -34,3 +34,6 @@ $GLOBALS['TYPO3_CONF_VARS']['LOG']['Documentation']['Examples']['Controller']['p
 ];
 ```
 [https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ApiOverview/Logging/Configuration/Index.html#processor-configuration](https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ApiOverview/Logging/Configuration/Index.html#processor-configuration)
+
+## Credits
+This LogProcessor is heavily inspired by the Processor of [monolog/monolog](https://github.com/Seldaek/monolog/)
