@@ -29,7 +29,7 @@
     "phpstan/phpstan-strict-rules": "^1.4",
     "saschaegerer/phpstan-typo3": "^1.8",
     "phpstan/extension-installer": "^1.2",
-    "typo3/testing-framework": "^6.16"
+    "typo3/testing-framework": "^7.0"
   },
   "replace": {
     "typo3-ter/t3-psr3-log-processor": "self.version"
