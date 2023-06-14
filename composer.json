@@ -3,7 +3,6 @@
   "type": "typo3-cms-extension",
   "description": "Provide PSR-3 interpolate log processor",
   "license": "GPL-2.0+",
-  "homepage": "http://www.schreibersebastian.de",
   "keywords": [
     "PSR-3",
     "Logging",
@@ -13,13 +12,12 @@
     {
       "name": "Sebastian Schreiber",
       "email": "breakpoint@schreibersebastian.de",
-      "role": "Developer",
-      "homepage": "http://www.schreibersebastian.de"
+      "role": "Developer"
     }
   ],
   "require": {
     "php": "^7.4 || ^8.0",
-    "typo3/cms-core": "^10.4 || ^11.5 || ^12.1"
+    "typo3/cms-core": "^10.4 || ^11.5 || ^12.4"
   },
   "require-dev": {
     "symplify/easy-coding-standard": "^11.1",
@@ -29,7 +27,7 @@
     "phpstan/phpstan-strict-rules": "^1.4",
     "saschaegerer/phpstan-typo3": "^1.8",
     "phpstan/extension-installer": "^1.2",
-    "typo3/testing-framework": "^6.16"
+    "phpunit/phpunit": "^9.0 || ^10.2"
   },
   "replace": {
     "typo3-ter/t3-psr3-log-processor": "self.version"
